@@ -1,0 +1,77 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 60em;
+    margin: 2em auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 1em;
+    border: 1px solid #ccc;
+}
+
+.headlines_table {
+    font-size: larger;
+    background-color: gray;
+    color: white;
+}
+
+#headlines_icon_archive,
+#headlines_icon_delete,
+img {
+    height: 1.5em;
+    width: 1.5em;
+}
+
+td {
+    background-color: lightgray;
+}
+
+.category__head {
+    font-size: larger;
+    background-color: gray;
+    color: white;
+}
+
+.circle {
+    width: 3em;
+    height: 3em;
+    border-radius: 50%;
+    background: gray;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#addNote {
+    margin: 1em auto;
+    display: block;
+}
+
+#addNote {
+    display: block;
+    margin: 1em auto;
+    padding: 1em 2em;
+    background-color: gray;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#addNote:hover {
+    background-color: #0056b3;
+}
+
