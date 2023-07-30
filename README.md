@@ -9,3 +9,24 @@
 ⦁	There should also be a summary table which counts notes by categories: separately for active and archived. The table is updated whenever users perform some action on notes. The summary table is shown on the same page as the notes table.
 
 ⦁	There is no need to implement data storage. Simply create a JS variable which stores the data and prepopulate it with 7 notes so that they are shown when the page is reloaded.
+
+
+While working on your task you should utilize all of the following:
+
+⦁	JavaScript
+
+⦁	Import / export 
+
+⦁	Array methods: map, reduce, filter (some of them)
+
+⦁	Array spread operator
+
+⦁	Regular expressions
+
+⦁	Try / catch
+
+⦁	DOM API
+
+⦁	document.querySelector
+
+⦁	document.addEventListener
