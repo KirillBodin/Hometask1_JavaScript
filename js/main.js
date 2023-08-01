@@ -1,4 +1,4 @@
-import { icons } from './utils/icons.js';
+import {icons} from './utils/icons.js';
 import {
     changeArchived,
     createNote,
@@ -70,7 +70,6 @@ const showDialog = (mode = 'create', note) => {
 };
 
 
-
 const addNotes = (note) => {
     const clone = noteTemplate.content.cloneNode(true)
 
@@ -120,16 +119,10 @@ const updateTables = () => {
             fillTable(listNotes, fillDataArchive())
         }
         fillTable(categoryBody, getCategory())
-    }
-    catch (e) {
+    } catch (e) {
         console.log(e)
     }
 };
-
-
-
-
-
 
 
 addNoteButton.addEventListener('click', () => showDialog())
