@@ -1,5 +1,4 @@
-import {icons} from './utils/icons.js'
-
+import { icons } from './utils/icons.js';
 import {
     changeArchived,
     createNote,
@@ -8,71 +7,69 @@ import {
     editNote,
     fillDataArchive,
     fillDataNotes,
-    getCategory
+    getCategory,
 } from './notesFunctions.js';
 
-
-const headlines_icon_delete = document.querySelector('#headlines_icon_delete')
-const headlines_icon_archive = document.querySelector('#headlines_icon_archive')
-const listNotes = document.querySelector('.notes')
-const categoryTemplate = document.querySelector('#category-template')
-const addNoteButton = document.querySelector('#addNote')
-const cancelButton = document.querySelector('#cancel')
-const submitButton = document.querySelector('#submit')
-const categoryBody = document.querySelector('.category_body')
-const noteTemplate = document.querySelector('#note')
-const form = document.querySelector('#form')
-const dialog = document.querySelector('#dialog')
-
-
+const headlines_icon_delete = document.querySelector('#headlines_icon_delete');
+const headlines_icon_archive = document.querySelector('#headlines_icon_archive');
+const listNotes = document.querySelector('.notes');
+const categoryTemplate = document.querySelector('#category-template');
+const addNoteButton = document.querySelector('#addNote');
+const cancelButton = document.querySelector('#cancel');
+const submitButton = document.querySelector('#submit');
+const categoryBody = document.querySelector('.category_body');
+const noteTemplate = document.querySelector('#note');
+const form = document.querySelector('#form');
+const dialog = document.querySelector('#dialog');
 
 const addCategory = (category) => {
     try {
-        const clone = categoryTemplate.content.cloneNode(true)
-        clone.querySelector('.logo .circle').innerHTML = icons[category.name]
-        clone.querySelector('.category').textContent = category.name
-        clone.querySelector('.active-count').textContent = category.active
-        clone.querySelector('.archive-count').textContent = category.archived
+        const clone = categoryTemplate.content.cloneNode(true);
+        clone.querySelector('.logo .circle').innerHTML = icons[category.name];
+        clone.querySelector('.category').textContent = category.name;
+        clone.querySelector('.active-count').textContent = category.active;
+        clone.querySelector('.archive-count').textContent = category.archived;
 
-        categoryBody.appendChild(clone)
-    }
-    catch (e) {
-        console.log(e)
+        categoryBody.appendChild(clone);
+    } catch (e) {
+        console.log(e);
     }
 };
 
 const fillTable = (table, tableContent) => {
     try {
         if (table === listNotes) {
-            tableContent.forEach((el) => addNotes(el))
+            tableContent.forEach((el) => addNotes(el));
         }
         if (table === categoryBody) {
-            tableContent.forEach((el) => addCategory(el))
+            tableContent.forEach((el) => addCategory(el));
         }
-    }
-    catch (e) {
+    } catch (e) {
         console.error(e);
     }
-}
-
-
+};
 
 const showDialog = (mode = 'create', note) => {
-    form.dataset.mode = mode
-    form.dataset.noteId = note?.id
+    form.dataset.mode = mode;
+    form.dataset.noteId = note?.id;
+
+    form.reset();
+
     if (note) {
-        form.querySelector('#name').value = note.name
-        form.querySelector('#category').value = note.category
-        form.querySelector('#content').value = note.content
+        form.querySelector('#name').value = note.name;
+        form.querySelector('#category').value = note.category;
+        form.querySelector('#content').value = note.content;
     }
-    dialog.showModal()
+    dialog.showModal();
     cancelButton.addEventListener('click', () => {
-        dialog.close()
-    })
+        dialog.close();
+    });
     submitButton.addEventListener('click', () => {
-        updateTables()
-    })
-}
+        updateTables();
+    });
+};
+
+
 
 const addNotes = (note) => {
     const clone = noteTemplate.content.cloneNode(true)
